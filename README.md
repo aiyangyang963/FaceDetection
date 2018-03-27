@@ -1,24 +1,32 @@
-# MTCNN C++ Implementation
+# MTCNN MXNET C++ Implementation
 
-This is a C++ project to implement MTCNN, a perfect face detect algorithm, on different DL frameworks.<br>
-The most popular frameworks: caffe/mxnet/tensorflow, are all suppported now.
+This is a C++ project to implement MXNET MTCNN, a perfect face detect algorithm, on different DL frameworks.
 
-# Build
+## install dependencies
+```sh
+# For linux(ubuntu)
+sudo apt-get install -y libopenblas-dev liblapack-dev
+sudo apt-get install -y libopencv-dev
 
-* Bulid caffe,  mxnet  or tensorflow first
-   Please  edit makefile.mk (set xxx_ON flags to enable corresponding dp framework) to select one or more to be supported
-	* Build Caffe-HRT, refer to [Caffe-HRT Release notes](https://github.com/OAID/Caffe-HRT/blob/master/README.md)
-	* Build MXNet-HRT, refer to [MXNet-HRT release notes](https://github.com/OAID/MXNet-HRT/blob/master/README.md)
-	* Build tensorflow, to generate libtensorflow.so, please use:
-		>> bazel build --config=opt //tensorflow/tools/lib_package:libtensorflow
-	
-	  the tarball, bazel-bin/tensorflow/tools/lib_package/libtensorflow.tar.gz, includes the libtensorflow.so and c header files  
+# For Mac
+brew install openblas
+brew install opencv
+```
 
-* Edit Makefile to set `CAFFE_ROOT`, `MXNET_ROOT`  or `TENSORFLOW_ROOT` to the right path in your machine. For example : CAFFE_ROOT=/usr/local/AID/Caffe-HRT/.
+## Build
+```sh
+mkdir -p build
+cd build
+cmake -DUSE_CUDA=0 ..
+```
 
-* make -j4
+* make -j ${nproc}
 
-# Run
+## Run
+
+### run picture
+
+### run camera
 If the basic work is ready (build caffe/Mxnet/Tensorflow sucessfully) followed by above steps. You can run the test now.
 ### 1. Test on single picture:
 
