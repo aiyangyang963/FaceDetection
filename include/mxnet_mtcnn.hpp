@@ -30,10 +30,9 @@ class mxnet_mtcnn: public mtcnn {
 		void load_PNet(int h, int w);
 		void free_PNet(void);
 
-                void copy_one_patch(const cv::Mat& img,face_box&input_box,float * data_to, int width, int height);
-                PredictorHandle load_RNet(int batch);
-                PredictorHandle load_ONet(int batch);
-                
+        void copy_one_patch(const cv::Mat& img,face_box&input_box,float * data_to, int width, int height);
+        PredictorHandle load_RNet(int batch);
+        PredictorHandle load_ONet(int batch);
 
 		PredictorHandle load_mxnet_model(const std::string& param_file, const std::string& json_file, 
 				int batch, int channel,int input_h, int input_w);
