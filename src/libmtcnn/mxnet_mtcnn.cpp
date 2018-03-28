@@ -246,7 +246,6 @@ void mxnet_mtcnn::run_PNet(const cv::Mat& img, scale_window& win, std::vector<fa
 	cv::split(resized, input_channels);
 
 
-
 	MXPredSetInput(PNet_,"data",input.data(),input.size());
 	MXPredForward(PNet_);
 

@@ -17,11 +17,11 @@ class mxnet_mtcnn: public mtcnn {
 
 		void detect(cv::Mat& img, std::vector<face_box>& face_list);
 
-                void set_batch_mode_bound(int r, int o) 
-                 {
-                     rnet_batch_bound_=r;
-                     onet_batch_bound_=o;
-                 }
+        void set_batch_mode_bound(int r, int o) 
+    	{
+            rnet_batch_bound_=r;
+            onet_batch_bound_=o;
+        }
 
 		~mxnet_mtcnn();
 
@@ -39,7 +39,7 @@ class mxnet_mtcnn: public mtcnn {
 
 		void run_PNet(const cv::Mat& img, scale_window& win, std::vector<face_box>& box_list);
 
-               	int run_preload_RNet(const cv::Mat& img, face_box& input_box, face_box& output_box);
+        int run_preload_RNet(const cv::Mat& img, face_box& input_box, face_box& output_box);
 		int run_preload_ONet(const cv::Mat& img, face_box&input_box, face_box& output_box); 
 
 		void run_RNet(const cv::Mat& img,std::vector<face_box>& pnet_boxes, std::vector<face_box>& output_boxes);

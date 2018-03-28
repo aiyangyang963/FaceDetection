@@ -52,7 +52,7 @@ int main(int argc, char * argv[])
         return 1;
     }
 
-    std::string model_dir = "./models";
+    std::string model_dir = "../models";
 
     mtcnn * p_mtcnn = mtcnn_factory::create_detector(type);
 

@@ -44,7 +44,7 @@ class mtcnn {
 			min_size_=40;
 			pnet_threshold_=0.6;
 			rnet_threshold_=0.7;
-			onet_threshold_=0.9;
+			onet_threshold_=0.6;
 			factor_=0.709;
 
 		}
@@ -86,12 +86,10 @@ class mtcnn_factory
 
 		static void register_creator(const std::string& name, creator& create_func);
 		static mtcnn * create_detector(const std::string& name);
-                static std::vector<std::string> list(void);
+        static std::vector<std::string> list(void);
 
 	private:
 		mtcnn_factory(){};
-
-
 };
 
 class  only_for_auto_register
